@@ -1,0 +1,29 @@
+{
+  "description": "Remove all the suggestions in the google search page",
+  "manifest_version": 2,
+  "name": "Goofine",
+  "version": "1.0",
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "<all_urls>",
+    "storage"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/*"],
+      "js": ["page/display.js", "main.js"]
+    }
+  ],
+
+  "browser_action": {
+    "browser_style": true,
+    "default_popup": "page/index.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    }
+  }
+}
